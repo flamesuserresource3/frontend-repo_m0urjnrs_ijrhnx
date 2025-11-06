@@ -1,28 +1,52 @@
-import { useState } from 'react'
+import Hero from "./components/Hero";
+import Roadmap from "./components/Roadmap";
+import Resources from "./components/Resources";
+import { Section, Note } from "./components/Sections";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
-    </div>
-  )
-}
+    <div className="min-h-screen bg-white text-gray-900">
+      <Hero />
+      <Roadmap />
 
-export default App
+      <Section id="rw-outline" title="Ringkasan Domain Reading & Writing (berdasarkan College Board)">
+        <ul>
+          <li>
+            Craft and Structure: identifikasi tujuan penulis, pilihan kata, struktur, dan relasi antar bagian.
+          </li>
+          <li>
+            Information and Ideas: gagasan utama, bukti pendukung, inferensi, dan interpretasi data.
+          </li>
+          <li>
+            Standard English Conventions: tata bahasa, kesesuaian subjek-predikat, tanda baca.
+          </li>
+          <li>
+            Expression of Ideas: kohesi, transisi, efektivitas kalimat, dan ringkasan.
+          </li>
+        </ul>
+        <Note>
+          Outline ini diringkas dari halaman resmi College Board. Untuk praktik soal, gunakan tautan resmi
+          pada bagian Sumber.
+        </Note>
+      </Section>
+
+      <Section id="math-outline" title="Ringkasan Domain Math (berdasarkan College Board)">
+        <ul>
+          <li>Algebra: persamaan/sistem linear, interpretasi dan pemodelan.</li>
+          <li>Advanced Math: ekspresi kompleks, fungsi, transformasi, dan analisis.</li>
+          <li>Problem-Solving and Data Analysis: proporsi, persentase, statistik dasar, dan data.</li>
+          <li>Geometry & Trigonometry: panjang, sudut, area/volume, trigonometri dasar.</li>
+        </ul>
+      </Section>
+
+      <Resources />
+
+      <footer className="border-t border-gray-200 py-10">
+        <div className="mx-auto max-w-7xl px-6 text-center text-sm text-gray-500">
+          Disusun untuk tujuan edukasi. SAT adalah merek dagang College Board. Konten diringkas ulang dan
+          merujuk ke sumber resmi.
+        </div>
+      </footer>
+    </div>
+  );
+}
