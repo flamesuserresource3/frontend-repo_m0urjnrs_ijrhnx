@@ -1,4 +1,4 @@
-import { ExternalLink, Link as LinkIcon, FileText } from "lucide-react";
+import { ExternalLink, Link as LinkIcon } from "lucide-react";
 
 const resources = [
   {
